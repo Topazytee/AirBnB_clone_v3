@@ -81,14 +81,14 @@ class DBStorage:
         None if not found
         """
         if cls not in classes.values():
-            return
+            return None
 
         all_cls = models.storage.all(cls)
         for value in all_cls.values():
             if (value.id == id):
                 return value
 
-        return
+        return None
 
     def count(self, cls=None):
         """
